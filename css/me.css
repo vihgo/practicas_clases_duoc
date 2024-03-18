@@ -1,0 +1,29 @@
+
+.menu {
+    display: inline-flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    align-items: end;
+}
+.menu a{
+    padding: 5px;
+    text-decoration: none;
+}
+.menu a{
+    padding: 5px;
+    text-decoration: none;
+}
+
+#header {
+    
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#header img {
+    width: 200px;
+    padding-left: 50px;
+
+
+}
