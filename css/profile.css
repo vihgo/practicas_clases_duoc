@@ -1,0 +1,21 @@
+.profile{
+    display: flex;
+    justify-content: center;
+    margin-inline: 150px;
+    margin-top: 50px;
+    
+}
+
+.profile img{
+  object-fit: cover;
+  width: 40%;
+  min-width: 160px;
+  min-height: 100px;
+}
+.profile-content{
+  padding: 40px;
+  min-width: 250px;
+  background-color: rebeccapurple;
+  color: bisque;
+}
+/*JUGAR https://flexboxfroggy.com/*/

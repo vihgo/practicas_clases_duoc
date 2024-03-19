@@ -1,9 +1,9 @@
 
 .menu {
-    display: inline-flex;
-    justify-content: flex-end;
+    background-color: aqua;
     padding-right: 50px;
-    align-items: end;
+    /*display: flex;
+    align-items: center;*/
 }
 .menu a{
     padding: 5px;
@@ -18,6 +18,8 @@
     
     display: flex;
     justify-content: space-between;
+    align-items: center ;
+    background-color: darkslategray;
 
 }
 
@@ -27,3 +29,4 @@
 
 
 }
+
