@@ -1,6 +1,6 @@
 
 .menu {
-    background-color: aqua;
+
     padding-right: 50px;
     /*display: flex;
     align-items: center;*/
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center ;
-    background-color: darkslategray;
+    
 
 }
 

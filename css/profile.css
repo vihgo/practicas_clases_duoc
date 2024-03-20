@@ -1,16 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+body {
+  font-family: 'Poppins', sans-serif;
+}
 .profile{
     display: flex;
     justify-content: center;
     margin-inline: 150px;
-    margin-top: 50px;
+    margin-top: 5px;
     
 }
 
 .profile img{
   object-fit: cover;
   width: 40%;
-  min-width: 160px;
-  min-height: 100px;
+  min-width: 30vw;
+  
 }
 .profile-content{
   padding: 40px;
@@ -18,4 +22,54 @@
   background-color: rebeccapurple;
   color: bisque;
 }
+#banner{
+  background-image: url('/images/kento-nanami.jpg');
+  background-size: cover;
+  background-position: top ;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.titulo-banner {
+  font-weight: bolder;
+  margin-left: 40px;
+  color: azure;
+  font-size: 2rem;
+  
+}
+.titulo-banner p:nth-of-type(1) {
+  font-size: 1rem;
+  /* Estilos para el primer párrafo */
+}
+
+.titulo-banner p span {
+  /* Estilos para el segundo párrafo */
+  font-size: 3rem;
+  color: #F8C14E;
+}
+.boton{
+  margin-left: 40px;
+  background-color: #F8C14E;
+  border-radius: 10px;
+  width: fit-content;
+  padding: 5px ;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+
+}
+.boton > a{
+  text-decoration: none;
+ 
+ 
+
+}
+
+
+
+
+
 /*JUGAR https://flexboxfroggy.com/*/
