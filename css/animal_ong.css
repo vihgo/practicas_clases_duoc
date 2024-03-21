@@ -30,7 +30,14 @@
     margin-top: 15px;
     border: solid 1px;
     border-radius: 20px;
-    box-shadow: inset;
+    box-shadow: 1px 3px;
+    background-color: mistyrose;
+    transition: box-shadow 1s;
+}
+.tarjeta-persona:hover{
+    
+    box-shadow: 3px 6px;
+    
 }
 .tarjeta-nombre{
     text-align: left;
