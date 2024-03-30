@@ -1,0 +1,25 @@
+.carousel-inner{
+    max-height: 40vh;
+}
+.card img{
+    object-fit: contain;
+    max-height: 300px;
+}
+
+#html-logo-img{
+    background-color:#E54C21;
+}
+#css-logo-img{
+    background-color:#214CE5;
+}
+#js-logo-img{
+    background-color:#F0DB4F;
+}
+
+@media (max-width:768px){
+    .card{
+        max-width: 70vw;
+        margin:auto;
+    }
+
+}
