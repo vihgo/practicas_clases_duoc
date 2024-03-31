@@ -1,6 +1,73 @@
 body{
     background-color: #FFF7D4;
 }
-#main{
-    background-color: #FFD95A !important;
+#main-tienda{
+    background-color: #FFD95A;
+    max-width: 80vw;
+    margin:auto;
+}
+#contenido-tienda{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+#cabecera-tienda h2{
+    background-color: #FFF7D4;
+    width: fit-content;
+    transform-origin: center;
+
+    margin:auto;
+}
+.manga-tienda img{
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: auto;
+    padding: 10px 0px;
+}
+.manga-tienda button{
+
+    background-color: darkslategray;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    width: 80%;
+    height: 50px ;
+    margin: 14px auto;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.manga-tienda {
+    background-color: beige;
+    width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 20px;
+}
+.manga-info{
+    margin-left: 20px;
+    padding: 0px 20px ;
+
+}
+@media (min-width:768px){
+    .manga-tienda {
+       
+        width: 220px;
+        
+    }
+    body{
+        background-color: blue;
+    }
+
+
 }
