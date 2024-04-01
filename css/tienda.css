@@ -1,28 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Montserrat", sans-serif;
+}
 body{
-    background-color: #FFF7D4;
+    background-color: magenta;
+    border-style: dashed;
+   
+    
+}
+#banner-servicios{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+#banner-servicios div {
+   /* border-bottom: 2px solid #4C3D3D;
+    width: 80%;
+    margin: 20px auto;*/
+    position: relative;
+
+   
+    
+    
+}
+#banner-servicios div > p,h5 {
+    /* border-bottom: 2px solid #4C3D3D;
+     width: 80%;
+     margin: 20px auto;*/
+     padding-top: 15px;
+    
+     
+     
+ }
+ 
+
+#banner-servicios div>div::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(50% / 2); /* Ancho del borde en relación con el padre */
+    height: 2px; /* Grosor del borde */
+    background-color: #000; /* Color del borde */
+}
+#banner-servicios img{
+   
+    height: auto;
+    width: 120px;
+    
 }
 #main-tienda{
-    background-color: #FFD95A;
+    background-color: #FFF7D4;
     max-width: 80vw;
-    margin:auto;
+   
+    display: block;
+    margin: auto;
 }
 #contenido-tienda{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 
 #cabecera-tienda h2{
-    background-color: #FFF7D4;
+    
     width: fit-content;
     transform-origin: center;
 
     margin:auto;
 }
 .manga-tienda img{
-    width: 60%;
+    width: 75%;
     height: auto;
     display: block;
     margin: auto;
@@ -30,7 +85,7 @@ body{
 }
 .manga-tienda button{
 
-    background-color: darkslategray;
+    background-color: #4C3D3D;
     border: none;
     color: white;
     padding: 10px;
@@ -40,14 +95,15 @@ body{
     font-size: 1rem;
     width: 80%;
     height: 50px ;
-    margin: 14px auto;
+    margin: 5px auto;
     cursor: pointer;
     border-radius: 4px;
 }
 
 .manga-tienda {
-    background-color: beige;
-    width: 300px;
+    
+   /* width: 300px;*/
+    flex-basis: calc(85%);
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -55,19 +111,59 @@ body{
     margin-top: 20px;
 }
 .manga-info{
-    margin-left: 20px;
-    padding: 0px 20px ;
+   
+    padding-left: 13px;
+   
+    width: 75%;
+    margin: auto;
 
 }
-@media (min-width:768px){
+/* Estilos para el tercer párrafo */
+.manga-info h4{
+    color: #4C3D3D;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+}
+.manga-info p:nth-child(2) {
+    font-weight: 300;
+    
+    
+}
+.manga-info p:nth-child(3) {
+   
+    font-weight: 500;
+   
+    
+    
+}
+
+/* Pantallas boostrap
+pantalla small 576
+pantalla  medium 768
+pantalla large 992
+pantalla extra large 1200
+pantalla extra extra large 1400*/
+
+@media (min-width:756px){
     .manga-tienda {
        
-        width: 220px;
+        flex-basis: calc(33.33%);
+       
         
     }
-    body{
-        background-color: blue;
+   
+
+
+}
+@media (min-width:1200px){
+    .manga-tienda {
+       
+        flex-basis: calc(25%);
+       
+        
     }
+   
 
 
 }
