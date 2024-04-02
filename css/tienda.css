@@ -5,7 +5,7 @@
 }
 body{
     background-color: magenta;
-    border-style: dashed;
+   
    
     
 }
@@ -127,14 +127,78 @@ body{
 }
 .manga-info p:nth-child(2) {
     font-weight: 300;
-    
-    
 }
 .manga-info p:nth-child(3) {
-   
     font-weight: 500;
    
+}
+
+.noticias{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 40vh;
+    margin: 30px 10px;
+}
+.noticias-imagen-multiple{
+    width: 33%;
+    height: auto;
+    background-color: yellow;
+    display: flex;
+    position: relative;
+   
+
+}
+.background-imagen-multiple{
+    width: 25%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     
+}
+.noticias-imagen-multiple::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 99.4%;
+    height: 97.5%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color de fondo con opacidad */
+    z-index: 0; /* Asegura que esta capa esté detrás del texto y las imágenes */
+}
+.noticias-info{
+    position: absolute;
+    top: 25%; /* Ajusta la posición vertical según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+.noticias-info a{
+    text-decoration: none;
+    
+    border-bottom: 2px solid;
+    font-weight: 400;
+    color: #FFF7D4;
+}
+.background-imagen-multiple:nth-child(1) {
+    background-image: url("/images/mangas/gantz_05.jpg");
+   
+    
+}
+.background-imagen-multiple:nth-child(2) {
+   background-image: url("/images/mangas/hunter_x_hunter_29.jpg");
+   
+    
+}
+.background-imagen-multiple:nth-child(3) {
+    background-image: url("/images/mangas/zelda_art.jpg");
+    
+}
+.background-imagen-multiple:nth-child(4) {
+    background-image: url("/images/mangas/vagabond_25.jpg");
     
 }
 
