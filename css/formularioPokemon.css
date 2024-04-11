@@ -2,6 +2,24 @@
     display: flex;
     flex-direction: column;
 }
+#contenedor{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+form{
+   
+    width: 40vw;
+    margin: auto;
+    
+}
+.perfil_pokemon label{
+   
+    margin-top: 10px;
+    
+}
+fieldset{
+    margin-top: 20px;
+}
 
 .habilidad_input{
     display: flex;
@@ -27,11 +45,12 @@
 }
 .carta_titulo_fase{
     display: flex;
-    background-color: red;
+    
     width: 50%;
     justify-content: start;
 
 }
+
 
 .carta_fase img {
 
@@ -51,7 +70,7 @@
 
 }
 .carta_fase{
-background-color: aqua;
+
 padding-left: 10px;
 padding-top: 20px;
 font-size: 1.1rem;
@@ -61,15 +80,24 @@ position: relative;
 
 
 }
+.carta_fase i{
+    background-color: aliceblue;
+    padding: 2px;
+    border-radius: 5px;
+    width: 100%;
+
+}
 .cuerpo-carta{
-    background-color: black;
+   
 }
 .contenedor-imagen{
     width: auto;
     border: 8px solid silver;
+    width: 90%;
+    display: block;
     margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: auto;
+    
    
 }
 .contenedor-imagen img{
@@ -77,6 +105,8 @@ position: relative;
     display: block;
     margin: auto;
     object-fit: cover;
+   
+    
 }
 .carta_titulo {
     position: relative;
@@ -91,8 +121,9 @@ position: relative;
 }
 .carta_titulo p{
     position: absolute;
-    top: 35px;
+    top: 38px;
     width: 100%;
+    font-size: 0.9rem;
     
     
 }
