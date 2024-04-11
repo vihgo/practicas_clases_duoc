@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/formularioPokemon.css">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" action="cursoweb.html">
+        <!--El atributo name se utiliza para hacer referencia al elemento mediante javascript o para tener la referencia en el backend cuando los datos han sido enviados-->
+        <div id="carta">
+
+        </div>
+
+        <div >
+            <div class="perfil_pokemon">
+            <label for="nombre_pokemon"> Nombre del pokemon</label>
+            <input type="text" id="nombre_pokemon" name="nombre_pokemon" placeholder="Pikachu" maxlength="50">
+            <label for="ps_pokemon"> Puntos de salud del pokemón</label>
+            <input type="number" id="ps_pokemon" name="ps_pokemon" placeholder="Puntos de salud pokemon" maxlength="3">
+            <label for="fase_pokemon">Fase del pokemón</label>
+            <select id="fase_pokemon" name="fase_pokemon">
+
+                <option value="Basico">Basico</option>
+                <option value="Fase 1">Fase1</option>
+                <option value="Fase 2">Fase2</option>
+            </select>
+            <label for="tipo_pokemon">Tipo elemental del pokemón</label>
+            <select name="tipo_pokemon" id="tipo_pokemon">
+                <option value="Planta">Planta</option>
+                <option value="Psiquico">Psiquico</option>
+                <option value="Fuego">Fuego</option>
+                <option value="Electrico">Electrico</option>
+                <option value="Oscuro">Oscuro</option>
+                <option value="Agua">Agua</option>
+                <option value="Lucha">Lucha</option>
+                <option value="Metalico">Metálico</option>
+                <option value="Incoloro">Incoloro</option>
+                
+            </select>
+            </div>
+            <fieldset>
+                <legend>Habilidades</legend>
+                <div class="habilidad_input">
+                    <label for="coste_habilidad_1"> Coste</label>
+                    <input type="text" id="coste_habilidad_1" name="coste_habilidad_1" placeholder="1I;2R"   >
+                    <label for="nombre_habilidad_1">Nombre Habilidad</label>
+                    <input type="text" id="nombre_habilidad_1" name="nombre_habilidad_1" placeholder="nombre de la habilidad" >
+                    <textarea name="descripcion_habilidad_1"  ></textarea>
+                    <label for="daño_habilidad_1"> Daño de la habilidad</label>
+                    <input type="number" name="daño_habilidad_1" id="daño_habilidad_1">
+                </div>
+                <div class="habilidad_input">
+                    <input type="text" id="coste_habilidad_2" name="coste_habilidad_2" placeholder="Coste de la habilidad"   >
+                    <input type="text" id="nombre_habilidad_2" name="nombre_habilidad_2" placeholder="nombre de la habilidad" >
+                    <textarea name="descripcion_habilidad"  ></textarea>
+                    <label for="daño_habilidad_2"> Daño de la habilidad</label>
+                    <input type="number" name="daño_habilidad_2">
+                </div>
+            </fieldset>
+        </div>
+    </form>
+</body>
+</html>

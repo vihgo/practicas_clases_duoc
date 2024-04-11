@@ -1,0 +1,9 @@
+.perfil_pokemon{
+    display: flex;
+    flex-direction: column;
+}
+
+.habilidad_input{
+    display: flex;
+    flex-direction: column;
+}
