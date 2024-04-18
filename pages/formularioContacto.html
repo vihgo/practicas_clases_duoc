@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/formularioContacto.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <form action="">
+        <h2> Contacto</h2>
+        <div class="input-group">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" placeholder="Pedro">
+
+            <label for="rut">Rut</label>
+            <input type="text" name="rut" id="rut" placeholder="1768341-7" onchange="validarCampoRut()">
+            
+            <label for="phone">Teléfono</label>
+            <input type="text" name="phone" id="phone" onchange="validarTelefono()" placeholder="+5693123123">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="email">
+
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" cols="40" rows="10" placeholder="Mensaje"></textarea>
+
+            <div class="form-politica">
+                <input type="checkbox"> <bold>Acepta Politica de privacidad</bold>
+               
+            </div>
+            <button id="enviar-btn" type="submit">Enviar</button>
+
+        </div>
+    </form>
+</body>
+<script src="/js/formularioContacto.js"></script>
+</html>

@@ -1,0 +1,80 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    padding: 50px 55px;
+    box-shadow: 0 0 20px silver;
+    border-radius: 20px;
+    width: 70vw;
+    /*text-align: center;*/
+}
+h2{
+    color: slateblue;
+    text-align: center;
+    font-size: 2rem;
+}
+label{
+    color: slategray;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px;
+    
+}
+input,textarea{
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(250, 249, 255);
+    color: darkslategrey;
+    
+    outline: none; /*elimina el borde que se superpone al momento de hacer focus en el input*/
+
+}
+.input-group{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+ 
+  
+
+}
+
+input::placeholder, textarea::placeholder{
+    color: rgb(158, 158, 158);
+}
+
+.warnings{
+    box-shadow: 1px 5px rgb(253, 112, 46);
+    border-bottom: solid 1px red;
+    color: rgb(40, 40, 10);
+}
+.form-politica  input{
+    color: #2a2ada;
+
+}
+#enviar-btn{
+    font-size: 1.2rem;
+    color: white;
+    border: 0;
+    border-radius: 25px;
+    background-color: #51d94c;
+    width: 40%;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+
+}
+
+@media (min-width:800px) {
+
+   
+    form{
+        
+        width: 30vw;
+        /*text-align: center;*/
+    }
+}
