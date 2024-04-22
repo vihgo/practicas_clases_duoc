@@ -1,18 +1,108 @@
+/*InputValidator y InputGroupValidator forman parte del patron de composition aplicado para 
+darle una estructura lógica al uso de las validaciones en los formularios*/
+class InputValidator{
+    constructor(input,validationRules,cssErrorClass){
+        this.input=input
+        this.validationRules=validationRules
+        this.passValidation=false
+        this.cssErrorClass=cssErrorClass
+    }
 
-function validarCampoRut(){
-    if(validarFormatoRut()){
-        validaRut()
+    validateInput(){
+        if(this.validationRules()){
+            this.input.classList.remove(this.cssErrorClass)
+            this.passValidation=true;
+        }else{
+            this.input.classList.add(this.cssErrorClass)
+            this.passValidation=false;
+
+        }
     }
 }
-function validarTelefono(){
-    //validamos que los valores que se puedan ingresar sean números y el signo más
-    telInput=document.querySelector('input[name="phone"]')
-    if(!telInput.value.match(/^\+[0-9]+$/))telInput.value=""
+
+class InputGroupValidator{
+     //singleton
+     
+    static notValidCount=0
+    static isAllValid(inputsValidators){
+        InputGroupValidator.notValidCount=0
+        this.inputsValidators=inputsValidators
+        this.inputsValidators.forEach(inputValidator => {
+            if(inputValidator.passValidation==false){
+                InputGroupValidator.notValidCount+=1
+            }
+        });
+        
+    if(InputGroupValidator.notValidCount>0 ){ return false} else {return true}
+
+        
+       
+    }
+
+}
+const telInput=document.querySelector('input[name="phone"]')
+const rutInput=document.querySelector('input[name="rut"]')
+const formButton=document.querySelector('button')
+const rutFormatValidation= new InputValidator(rutInput,rutFormatRule,'warnings')
+const rutLogicValidation= new InputValidator(rutInput,rutVerificationRule,'warnings')
+const phoneFormatValidation= new InputValidator(telInput,phoneValidationRule,'warnings')
+
+
+const validationArray=[rutFormatValidation,rutLogicValidation,phoneFormatValidation]
+
+setInterval(function() {
+    // code to be executed repeatedly
+    validaForm()
+  }, 100);
+
+function validateRutField(){
+    rutFormatValidation.validateInput()
+    rutLogicValidation.validateInput()
+    
+}
+function validatePhoneField(){
+    phoneFormatValidation.validateInput()
+}
+function validaForm(){
+    
+    if (InputGroupValidator.isAllValid(validationArray)){
+        console.log("esta todo validado")
+        if(formButton.disabled){
+            formButton.classList.remove('buttonDisabled')
+            formButton.disabled = false
+        }
+            
+    
+    }else{
+        console.log("no esta todo validado")
+        if(!formButton.disabled){
+            console.log("Entro una vez")
+            
+            formButton.classList.add('buttonDisabled')
+            formButton.disabled = true
+        }
+      
+    }
+    
+
 }
 
-function validaRut(){
 
-    rutInput=document.querySelector('input[name="rut"]')
+function phoneValidationRule(){
+    //validamos que los valores que se puedan ingresar sean números y el signo más
+    
+    if(!telInput.value.match(/^\+[0-9]+$/)){
+        telInput.value=""
+        return false
+    }else{
+        return true
+
+    }
+}
+
+function rutVerificationRule(){
+
+    
     let valorInput=rutInput.value
     let [rutNumeros,rutDigito]=valorInput.split("-")
     let rutNumerosAlReves= rutNumeros.split('').reverse().join('')
@@ -32,21 +122,19 @@ function validaRut(){
 
     if(rutDigito!=digito ){
         // La función 'classList.toggle' añade la clase si no está, o la quita si ya está
-        rutInput.classList.add('warnings')
+      
         return false;
     }else{
-        rutInput.classList.remove('warnings')
+        
         return true;
     }
 
-    console.log(digito)
 
 
    
 }
 
-function validarFormatoRut(){
-    rutInput=document.querySelector('input[name="rut"]');
+function rutFormatRule(){
    
     if(rutInput.value.match(/[0-9kK-]/))return true;
     else{

@@ -68,6 +68,10 @@ input::placeholder, textarea::placeholder{
     cursor: pointer;
 
 }
+.buttonDisabled{
+    background-color: #20561e51 !important;
+    cursor: none !important;
+}
 
 @media (min-width:800px) {
 
