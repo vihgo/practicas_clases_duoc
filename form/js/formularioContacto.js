@@ -7,46 +7,21 @@ const rutFormatValidation= new InputValidator(rutInput,rutFormatRule,'warnings')
 const rutLogicValidation= new InputValidator(rutInput,rutVerificationRule,'warnings')
 const phoneFormatValidation= new InputValidator(telInput,phoneValidationRule,'warnings')
 
-telInput.addEventListener('blur',validatePhoneField)
-const validationArray=[rutFormatValidation,rutLogicValidation,phoneFormatValidation]
+telInput.addEventListener('change',validatePhoneField)
+rutInput.addEventListener('change',validateRutField)
 
-
-setInterval(function() {
-    // code to be executed repeatedly
-    validaForm()
-  }, 100);
+const inputGroupValidator= new InputGroupValidator(formButton,[rutFormatValidation,rutLogicValidation,phoneFormatValidation],'buttonDisabled')
+inputGroupValidator.validateInput()
 
 function validateRutField(){
     rutFormatValidation.validateInput()
     rutLogicValidation.validateInput()
-    
+    inputGroupValidator.validateInput()
 }
 function validatePhoneField(){
     console.log("Debug de teléfono")
     phoneFormatValidation.validateInput()
-}
-function validaForm(){
-    
-    if (InputGroupValidator.isAllValid(validationArray)){
-        console.log("esta todo validado")
-        if(formButton.disabled){
-            formButton.classList.remove('buttonDisabled')
-            formButton.disabled = false
-        }
-            
-    
-    }else{
-        console.log("no esta todo validado")
-        if(!formButton.disabled){
-            console.log("Entro una vez")
-            
-            formButton.classList.add('buttonDisabled')
-            formButton.disabled = true
-        }
-      
-    }
-    
-
+    inputGroupValidator.validateInput()
 }
 
 
@@ -55,8 +30,11 @@ function phoneValidationRule(){
     
     if(!telInput.value.match(/^\+[0-9]+$/)){
         telInput.value=""
+        telInput.nextElementSibling.style.visibility="visible";
+        telInput.nextElementSibling.textContent="Debe agregar el telefono en formato +56"
         return false
     }else{
+        telInput.nextElementSibling.style.visibility="hidden";
         return true
 
     }
@@ -81,15 +59,13 @@ function rutVerificationRule(){
     let parteEntera=parseInt(division);
     //6
     let digito= 11-(resultadoSuma-(parteEntera*11))
-
-    if(rutDigito!=digito ){
+    console.log(digito)
+    if(rutDigito==digito || digito==10 &&  rutDigito.toLowerCase()=="k"){
         // La función 'classList.toggle' añade la clase si no está, o la quita si ya está
-      
-        return false;
-    }else{
+        return true
         
-        return true;
-    }
+    }else return false
+
 
 
 

@@ -22,22 +22,47 @@ export class InputValidator{
 
 export class InputGroupValidator{
      //singleton
-     
-    static notValidCount=0
-    static isAllValid(inputsValidators){
-        InputGroupValidator.notValidCount=0
-        this.inputsValidators=inputsValidators
-        this.inputsValidators.forEach(inputValidator => {
+      
+     constructor(input,inputValidators,cssErrorClass){
+        this.input=input
+        this.inputValidators=inputValidators
+        this.passValidation=false
+        this.cssErrorClass=cssErrorClass
+    }
+    validateInput()
+    {
+
+        this.notValidCount=0
+        this.inputValidators.forEach(inputValidator => {
             if(inputValidator.passValidation==false){
-                InputGroupValidator.notValidCount+=1
+                this.notValidCount+=1
             }
         });
         
-    if(InputGroupValidator.notValidCount>0 ){ return false} else {return true}
+        if(this.notValidCount>0 ){ 
+            this.notValidCount=0 
+            this.input.classList.add(this.cssErrorClass)
+            this.input.disabled=true
+            this.passValidation=false
+            
+        } else {
+            this.input.classList.remove(this.cssErrorClass)
+            this.passValidation=true
+            this.input.disabled=false
+            
+         }   
+    
+    
 
         
        
     }
+        
+    
+
+        
+       
+    
 
 }
 

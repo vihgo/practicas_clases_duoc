@@ -1,16 +1,24 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
 }
 form{
     padding: 50px 55px;
     box-shadow: 0 0 20px silver;
     border-radius: 20px;
     width: 70vw;
+    margin-right: 20px;
     /*text-align: center;*/
+}
+form p{
+    display: inline;
+    color: red;
+    text-align: right;
+    padding-right: 10px;
+    background-color: #2a2ada;
 }
 h2{
     color: slateblue;
@@ -27,7 +35,7 @@ label{
 input,textarea{
     padding: 15px 20px;
     border-radius: 20px;
-    margin-bottom: 20px;
+    
     background-color: rgb(250, 249, 255);
     color: darkslategrey;
     
@@ -38,6 +46,7 @@ input,textarea{
     display: flex;
     flex-direction: column;
     text-align: left;
+    justify-content: center;
  
   
 
@@ -78,7 +87,8 @@ input::placeholder, textarea::placeholder{
    
     form{
         
-        width: 30vw;
+        width: 20vw;
         /*text-align: center;*/
     }
+   
 }
