@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/clima/css/main.css"> 
+    <link rel="stylesheet" href="/clima/css/spinner.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form>
+                <div id="resultado">
+                    <p>En esta sección se muestra el resultado</p>
+                </div>
+                <label for="ciudad">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad" placeholder="Santiago">
+           
+                <label for="pais">Pais</label>
+                <select name="pais" id="pais">
+                    <option disabled selected value="">Seleccione</option>
+                    <option value="AR">Argentina</option>
+                    <option value="CL">Chile</option>
+                    <option value="PE">Peru</option>
+                    <option value="US">Estados Unidos</option>
+                    <option value="BR">Brazil</option>
+                </select>
+                
+            
+            <button type="submit" name="obtenerClimaBtn" id="obtenerClimaBtn" >OBTENER CLIMA</button>
+           
+        </form>
+    </main>
+    <script src="/clima/js/app.js"></script>
+   
+</body>
+</html>
