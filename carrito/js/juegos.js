@@ -6,6 +6,7 @@ export const juegosNintendo=[
         imgAlt:"Imagen del juego de Mario vs. Donkey Kong. Donkey Kong y mario mirandose frente a frente",
         precioDolar:49.99
     },
+
     {
         nombreJuego:"Grounded",
         descripcion:"¡El mundo es un lugar vasto, hermoso y peligroso, especialmente cuando te han reducido al tamaño de una hormiga.",

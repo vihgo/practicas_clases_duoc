@@ -26,7 +26,7 @@ function cargarProductos(valorCambio){
         const cardDivImage= document.createElement('div')
         const cardDivContent= document.createElement('div')
         const cardDivInput= document.createElement('div')
-        cardDiv.id="juego1"
+        
         cardDiv.classList.add('card')
         cardDivImage.classList.add('card-image')
         cardDivContent.classList.add('card-content')
