@@ -9,18 +9,16 @@ const obtenerUrlIndicador=(indicador)=>`https://mindicador.cl/api/${indicador}`
 const contenedor=document.querySelector('#container')
 
 
+const dataDolar= await consultarApi('dolar')
+const valorDolar= dataDolar.serie[0].valor
+const dataProductos= await consultarApiPlatzi()
+console.log(dataProductos)
+cargarProductos(valorDolar,dataProductos)
 
-//esta funcion se ejecuta cuando se carga el documento
-document.addEventListener('DOMContentLoaded',e=>{
-    
-    consultarApi('dolar');
-    
-})
-
-function cargarProductos(valorCambio){
+function cargarProductos(valorCambio,productos){
 
 
-    juegosNintendo.forEach(juego => {
+    productos.forEach(producto => {
 
         const cardDiv= document.createElement('div')
         const cardDivImage= document.createElement('div')
@@ -31,11 +29,11 @@ function cargarProductos(valorCambio){
         cardDivImage.classList.add('card-image')
         cardDivContent.classList.add('card-content')
         cardDivInput.classList.add('input-div')
-
-        cardDivImage.innerHTML=`<img src="${juego.urlImage}" alt="${juego.altImg}" >`
-        cardDivContent.innerHTML=`<h3>${juego.nombreJuego}</h3>
-        <p>${juego.descripcion}</p>
-        <p>&#36;${formatearNumero(parseInt(juego.precioDolar*valorCambio))}</p>`
+        //<p>&#36;${formatearNumero(parseInt(juego.precioDolar*valorCambio))}</p>`
+        cardDivImage.innerHTML=`<img src="${producto.images[0]}" alt="${producto.title}" >`
+        cardDivContent.innerHTML=`<h3>${producto.title}</h3>
+        <p>${producto.description}</p>
+        <p>&#36;${producto.price}</p>`
         cardDivInput.innerHTML=`<input type="button" id="botonAgregar" name="botonAgregar" value="Agregar">`
         
         cardDiv.append(cardDivImage)
@@ -55,17 +53,28 @@ function cargarProductos(valorCambio){
 function abrirMenuPanelCarrito(){
     console.log("Carrito")
 }
+async function consultarApiPlatzi(){
+    const urlApiPlatzi='https://api.escuelajs.co/api/v1/products/?categoryId=2'
+    toggleSpinner()
+    const response = await fetch(urlApiPlatzi);
+    const jsonProductos = await response.json();
+    console.log(jsonProductos)
+    
+    toggleSpinner()
+    return jsonProductos
 
-function consultarApi(indicador){
+}
+
+async function consultarApi(indicador){
     const urlIndicador=obtenerUrlIndicador(indicador)
     toggleSpinner()
     console.log(urlIndicador)
-    fetch(urlIndicador).then( resp => resp.json()).then(data=>{
-        console.log(data)
-        toggleSpinner()
-        const valorDolar= data.serie[0].valor
-        cargarProductos(valorDolar)
-    })
+    const response = await fetch(urlIndicador);
+    const jsonIndicador = await response.json();
+    console.log(jsonIndicador)
+    toggleSpinner()
+    return jsonIndicador
+    
 
 
 }
